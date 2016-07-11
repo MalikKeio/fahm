@@ -14,17 +14,18 @@ var _toAbjad = {">":"أ", "<": "إ", "|": "آ", "A": "ا", "b": "ب", "t": "ت",
         "H": "ح", "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س",
         "$": "ش", "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
         "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م", "n": "ن", "h": "ه",
-        "w": "و", "y": "ي", "'": "ء", "a": " َ", "i": " ِ", "u": " ُ", "~": " ّ"};
+        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ"};
 var _toABC = {};
 for (var key in _toAbjad) {
   if (_toAbjad.hasOwnProperty(key)) {
      _toABC[_toAbjad[key]] = key;
   }
 }
-function toABC(str) {
+function toABC(str, backward) {
+    var lookUpTable = backward ? _toAbjad : _toABC;
     abcString = "";
     for(var i = 0; i < str.length; i++) {
-        var newChar = _toABC[str[i]];
+        var newChar = lookUpTable[str[i]];
         if (typeof newChar !== "undefined") {
             abcString += newChar;
         } else {
@@ -45,7 +46,16 @@ function findInDatabase(word, done) {
               return rowString.split("\t")[0] === convertedWord;
           }
         });
-        done(filteredArray);
+        var result = [];
+        for (var i = 0; i < filteredArray.length; i++) {
+            var parts = filteredArray[i].split("\t");
+            result.push({
+                arabic: toABC(parts[0], true),
+                vocalized: toABC(parts[1], true),
+                translation: parts[3]
+            });
+        }
+        done(result);
     });
 }
 function translate(word, ga_event_name, done) {
