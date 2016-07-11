@@ -10,9 +10,53 @@ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
 ga.src = 'https://ssl.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-function translate(word, ga_event_name) {
+var _toAbjad = {">":"أ", "<": "إ", "|": "آ", "A": "ا", "b": "ب", "t": "ت", "v": "ث", "j": "ج",
+        "H": "ح", "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س",
+        "$": "ش", "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
+        "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م", "n": "ن", "h": "ه",
+        "w": "و", "y": "ي", "'": "ء", "a": " َ", "i": " ِ", "u": " ُ", "~": " ّ"};
+var _toABC = {};
+for (var key in _toAbjad) {
+  if (_toAbjad.hasOwnProperty(key)) {
+     _toABC[_toAbjad[key]] = key;
+  }
+}
+function toABC(str) {
+    abcString = "";
+    for(var i = 0; i < str.length; i++) {
+        var newChar = _toABC[str[i]];
+        if (typeof newChar !== "undefined") {
+            abcString += newChar;
+        } else {
+            console.warn("Unknown char: " + str[i]);
+        }
+    }
+    return abcString;
+}
+
+function findInDatabase(word, done) {
+    var convertedWord = toABC(word);
+    $.get(chrome.extension.getURL('/data/dictstems'), function(dictionary) {
+        var inputArray = dictionary.split('\n');
+        var filteredArray = inputArray.filter(function (rowString) {
+          if (rowString.startsWith(";")) {
+              return false;
+          } else {
+              return rowString.split("\t")[0] === convertedWord;
+          }
+        });
+        done(filteredArray);
+    });
+}
+function translate(word, ga_event_name, done) {
   // FIXME Translate this word by hitting the database
-  return "Arabic " + word;
+  findInDatabase(word, function(result) {
+      if (result.length === 0) {
+          done("No result for " + word);
+      } else {
+          done(result);
+      }
+  })
 }
 
 function figureOutSlTl(tab_lang) {
@@ -109,9 +153,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
       case 'translate':
       console.log("received to translate: " + request.word);
 
-      var translation = translate(request.word, Options.translate_by());
-      sendResponse({
-          translation: translation
+      translate(request.word, Options.translate_by(), function(translation) {
+          sendResponse({
+              translation: translation
+          });
       });
       break;
       case 'tts':
