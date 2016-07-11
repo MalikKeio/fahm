@@ -34,34 +34,49 @@ function toABC(str, backward) {
     }
     return abcString;
 }
+var dictionary;
+$.get(chrome.extension.getURL('/data/dictstems'), function(_dictionary) {
+    var inputArray = _dictionary.split('\n');
+    dictionary = inputArray.filter(function (rowString) {
+      return !rowString.startsWith(";");
+    });
+});
+var dictsuffixes;
+$.get(chrome.extension.getURL('/data/dictsuffixes'), function(_dictionary) {
+    var inputArray = _dictionary.split('\n');
+    dictsuffixes = inputArray.filter(function (rowString) {
+      return !rowString.startsWith(";");
+    });
+});
+var dictprefixes;
+$.get(chrome.extension.getURL('/data/dictprefixes'), function(_dictionary) {
+    var inputArray = _dictionary.split('\n');
+    dictprefixes = inputArray.filter(function (rowString) {
+      return !rowString.startsWith(";");
+    });
+});
+
 
 function findInDatabase(word, result, options, done) {
     var convertedWord = toABC(word);
-    $.get(chrome.extension.getURL('/data/dictstems'), function(dictionary) {
-        var inputArray = dictionary.split('\n');
-        var filteredArray = inputArray.filter(function (rowString) {
-          if (rowString.startsWith(";")) {
-              return false;
-          } else {
-              return rowString.split("\t")[0] === convertedWord;
-          }
-        });
-        for (var i = 0; i < filteredArray.length; i++) {
-            var parts = filteredArray[i].split("\t");
-            result.push({
-                arabic: toABC(parts[0], true),
-                vocalized: toABC(parts[1], true),
-                translation: parts[3],
-                article: options.article
-            });
-        }
-        // Remove article to nouns
-        if (word.startsWith("ال")) {
-            findInDatabase(word.substring(2), result, {article: true}, done);
-        } else {
-            done(result);
-        }
+    var filteredArray = dictionary.filter(function (rowString) {
+      return rowString.split("\t")[0] === convertedWord;
     });
+    for (var i = 0; i < filteredArray.length; i++) {
+        var parts = filteredArray[i].split("\t");
+        result.push({
+            arabic: toABC(parts[0], true),
+            vocalized: toABC(parts[1], true),
+            translation: parts[3],
+            article: options.article
+        });
+    }
+    // Remove article to nouns
+    if (word.startsWith("ال")) {
+        findInDatabase(word.substring(2), result, {article: true}, done);
+    } else {
+        done(result);
+    }
 }
 function translate(word, ga_event_name, done) {
   // FIXME Translate this word by hitting the database
