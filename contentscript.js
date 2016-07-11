@@ -1,4 +1,4 @@
-var debug = false;
+var debug = true;
 
 function log() {
   if (debug) {
@@ -258,14 +258,13 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
         chrome.extension.sendRequest({handler: 'translate', word: word}, function(response) {
             log('response: ', response);
 
-            var translation = TransOver.deserialize(response.translation);
+            var translation = response.translation;
 
             if (!translation) {
               log('skipping empty translation');
               return;
             }
-
-            showPopup(e, TransOver.formatTranslation(translation, TransOverLanguages[response.tl].direction));
+            showPopup(e, TransOver.formatTranslation(translation));
         });
       }
     }
@@ -323,7 +322,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
             chrome.extension.sendRequest({handler: 'translate', word: selection}, function(response) {
                 log('response: ', response);
 
-                var translation = TransOver.deserialize(response.translation);
+                var translation = response.translation;
 
                 if (!translation) {
                   log('skipping empty translation');
@@ -331,7 +330,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
                 }
 
                 var xy = { clientX: last_mouse_stop.x, clientY: last_mouse_stop.y };
-                showPopup(xy, TransOver.formatTranslation(translation, TransOverLanguages[response.tl].direction));
+                showPopup(xy, TransOver.formatTranslation(translation));
             });
           }
         }
@@ -441,7 +440,7 @@ window.addEventListener('message', function(e) {
       chrome.extension.sendRequest({handler: 'translate', word: e.data.text, sl: e.data.sl, tl: e.data.tl}, function(response) {
           log('tat response: ', response);
 
-          var translation = TransOver.deserialize(response.translation);
+          var translation = response.translation;
 
           if (!translation) {
             log('tat skipping empty translation');
@@ -449,7 +448,7 @@ window.addEventListener('message', function(e) {
           }
 
           var e = { clientX: $(window).width(), clientY: 0 };
-          showPopup(e, TransOver.formatTranslation(translation, TransOverLanguages[response.tl].direction));
+          showPopup(e, TransOver.formatTranslation(translation));
       });
     }
 });

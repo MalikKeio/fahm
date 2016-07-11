@@ -3,34 +3,16 @@ RegExp.quote = function(str) {
 };
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-46863240-1']);
+_gaq.push(['_setAccount', 'UA-79560349-4']);
 _gaq.push(['_trackPageview']);
 
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = 'https://ssl.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-function translate(word, sl, tl, last_translation, onresponse, sendResponse, ga_event_name) {
-  var options = {
-    url: "https://translate.googleapis.com/translate_a/single?dt=t&dt=bd",
-    data: {
-      client: 'gtx',
-      q: word,
-      sl: sl,
-      tl: tl,
-      dj: 1,
-      source: 'bubble'
-    },
-    dataType: 'json',
-    success: function on_success(data) {
-      onresponse(data, word, tl, last_translation, sendResponse, ga_event_name);
-    },
-    error: function(xhr, status, e) {
-      console.log({e: e, xhr: xhr});
-    }
-  };
-
-  $.ajax(options);
+function translate(word, ga_event_name) {
+  // FIXME Translate this word by hitting the database
+  return "Arabic " + word;
 }
 
 function figureOutSlTl(tab_lang) {
@@ -127,20 +109,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
       case 'translate':
       console.log("received to translate: " + request.word);
 
-      chrome.tabs.detectLanguage(null, function(tab_lang) {
-          var sl, tl;
-          // hack: presence of request.tl/sl means this came from popup translate
-          if (request.tl && request.sl) {
-            localStorage['last_tat_tl'] = request.tl;
-            localStorage['last_tat_sl'] = request.sl;
-            sl = request.sl;
-            tl = request.tl;
-          } else {
-            var sltl = figureOutSlTl(tab_lang);
-            sl = sltl.sl;
-            tl = sltl.tl;
-          }
-          translate(request.word, sl, tl, last_translation, on_translation_response, sendResponse, Options.translate_by());
+      var translation = translate(request.word, Options.translate_by());
+      sendResponse({
+          translation: translation
       });
       break;
       case 'tts':
