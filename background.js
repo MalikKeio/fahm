@@ -14,7 +14,7 @@ var _toAbjad = {">":"أ", "<": "إ", "|": "آ", "A": "ا", "b": "ب", "t": "ت",
         "H": "ح", "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س",
         "$": "ش", "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
         "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م", "n": "ن", "h": "ه",
-        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ"};
+        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ", "o": "ْ", "p": "ة"};
 var _toABC = {};
 for (var key in _toAbjad) {
   if (_toAbjad.hasOwnProperty(key)) {
@@ -35,7 +35,7 @@ function toABC(str, backward) {
     return abcString;
 }
 
-function findInDatabase(word, done) {
+function findInDatabase(word, result, options, done) {
     var convertedWord = toABC(word);
     $.get(chrome.extension.getURL('/data/dictstems'), function(dictionary) {
         var inputArray = dictionary.split('\n');
@@ -46,21 +46,26 @@ function findInDatabase(word, done) {
               return rowString.split("\t")[0] === convertedWord;
           }
         });
-        var result = [];
         for (var i = 0; i < filteredArray.length; i++) {
             var parts = filteredArray[i].split("\t");
             result.push({
                 arabic: toABC(parts[0], true),
                 vocalized: toABC(parts[1], true),
-                translation: parts[3]
+                translation: parts[3],
+                article: options.article
             });
         }
-        done(result);
+        // Remove article to nouns
+        if (word.startsWith("ال")) {
+            findInDatabase(word.substring(2), result, {article: true}, done);
+        } else {
+            done(result);
+        }
     });
 }
 function translate(word, ga_event_name, done) {
   // FIXME Translate this word by hitting the database
-  findInDatabase(word, function(result) {
+  findInDatabase(word, [], {}, function(result) {
       if (result.length === 0) {
           done("No result for " + word);
       } else {
