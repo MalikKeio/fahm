@@ -182,12 +182,23 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
       break;
       case 'translate':
       console.log("received to translate: " + request.word);
+      var arabicWord = true;
+      for (var i = 0; i < request.word.length; i++) {
+          var charCode = request.word.charCodeAt(i);
+          if (charCode < 1536 || charCode > 1791) {
+              arabicWord = false;
+              console.log("Not arabic char: " + request.word[i]);
+              break;
+          }
+      }
 
-      translate(request.word, Options.translate_by(), function(translation) {
-          sendResponse({
-              translation: translation
+      if (arabicWord) {
+          translate(request.word, Options.translate_by(), function(translation) {
+              sendResponse({
+                  translation: translation
+              });
           });
-      });
+      }
       break;
       case 'tts':
       if (last_translation.succeeded) {
