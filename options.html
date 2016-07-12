@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>TransOver Extension Options</title>
+    <title>Fahm Extension Options</title>
     <script type="text/javascript" src="lib/jquery.min.js"></script>
     <script type="text/javascript" src="lib/lodash.min.js"></script>
     <script type="text/javascript" src="lib/transover_utils.js"></script>
@@ -82,10 +82,8 @@
   </head>
   <body>
     <div class="content">
-      <div class="heading">TransOver options</div>
+      <div class="heading">Fahm options</div>
       <div class="option">
-        <label for="target_lang">Translate into</label>
-        <select id="target_lang"></select>
         <label for="translate_by">when I</label>
         <select id="translate_by" name="translate_by">
           <option value="click">click on word</option>
@@ -98,25 +96,6 @@
       </div>
 
       <div id="more_options" style="display:none">
-        <div class="option">
-          <label for="from_lang">Translate from</label>
-          <select id="from_lang"></select>
-        </div>
-
-        <div class="option">
-          <label for="reverse_lang">Reverse translate to</label>
-          <select id="reverse_lang"></select>
-          <span class="hint"> (from 'Translate into')</span>
-        </div>
-
-        <div class="option">
-          <input type="checkbox" id="tts" name="tts"/>
-          <label for="tts">Enable Text-To-Speech</label>
-          <label for="tts_key">when I press
-            <select name="tts_key" id="tts_key"></select>
-            while popup is showing
-          </label>
-        </div>
 
         <div class="option">
           Configure translate popup hotkey <a id="set_hotkey" href='#'>here</a>
@@ -133,7 +112,7 @@
         <div class="option">
           <input type="checkbox" id="selection_key_only" name="selection_key_only"/>
           <label for="selection_key_only">Only show selection translation when</label>
-          <label for="selection_key_only_key"> I hold the 
+          <label for="selection_key_only_key"> I hold the
             <select name="selection_key_only_key" id="selection_key_only_key"></select>
             key</label>
         </div>

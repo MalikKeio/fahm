@@ -75,6 +75,8 @@ function findInDatabase(word, result, options, done) {
     var filteredArray = dictionary.filter(function (row) {
       if (options.verbImperfect) {
         return row.arabic === word && row['type-code'] === "VERB_IMPERFECT";
+      } else if (options.el || options.ah || options.aat) {
+        return row.arabic === word && (row['type-code'] === "NOUN" || row['type-code'] === "ADJ");
       } else {
         return row.arabic === word;
       }
@@ -110,8 +112,11 @@ function findInDatabase(word, result, options, done) {
         options.el = true;
         findInDatabase(word.substring(2), result, options, done);
     } else if (word.endsWith("ة")) {
-        options.tam = true;
+        options.ah = true;
         findInDatabase(word.substring(0, word.length - 1), result, options, done);
+    } else if (word.endsWith("ات")) {
+        options.aat = true;
+        findInDatabase(word.substring(0, word.length - 2), result, options, done);
     } else {
         done(result);
     }
