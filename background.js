@@ -58,7 +58,8 @@ $.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
             "arabic": toABC(parts[1], true),
             "vocalized": toABC(parts[2], true),
             "translation": parts[5].startsWith('"') ? parts[5].substring(1, parts[5].length - 1) : parts[5],
-            "type": parts[8].startsWith('"') ? parts[8].substring(1, parts[8].length - 1) : parts[8],
+            "type-code": parts[7],
+            "type-human": parts[8].startsWith('"') ? parts[8].substring(1, parts[8].length - 1) : parts[8],
             "stem": getStem(parts[10])
           });
         } else {
@@ -72,7 +73,11 @@ $.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
 function findInDatabase(word, result, options, done) {
     console.log("Looking for: " + word);
     var filteredArray = dictionary.filter(function (row) {
-      return row.arabic === word;
+      if (options.verbImperfect) {
+        return row.arabic === word && row['type-code'] === "VERB_IMPERFECT";
+      } else {
+        return row.arabic === word;
+      }
     });
     for (var i = 0; i < filteredArray.length; i++) {
         var entry = $.extend(true, {}, filteredArray[i]);
@@ -88,6 +93,18 @@ function findInDatabase(word, result, options, done) {
         findInDatabase(word.substring(1), result, options, done);
     } else if (word.startsWith("ب") && !options.bi) {
         options.bi = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("ي") && !options.verb) {
+        options.ya = true;
+        options.verbImperfect = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("ت") && !options.verb) {
+        options.ta = true;
+        options.verbImperfect = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("س") && !options.verb) {
+        options.sa = true;
+        options.verbImperfect = true;
         findInDatabase(word.substring(1), result, options, done);
     } else if (word.startsWith("ال") && !options.el) {
         options.el = true;
