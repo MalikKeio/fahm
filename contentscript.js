@@ -437,7 +437,7 @@ window.addEventListener('message', function(e) {
       return;
 
     if (e.data.type == 'transoverTranslate') {
-      chrome.extension.sendRequest({handler: 'translate', word: e.data.text, sl: e.data.sl, tl: e.data.tl}, function(response) {
+      chrome.extension.sendRequest({handler: 'translate', word: e.data.text}, function(response) {
           log('tat response: ', response);
 
           var translation = response.translation;
