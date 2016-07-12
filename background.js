@@ -14,13 +14,15 @@ var _toAbjad = {">":"أ", "<": "إ", "|": "آ", "A": "ا", "b": "ب", "t": "ت",
         "H": "ح", "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س",
         "$": "ش", "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
         "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م", "n": "ن", "h": "ه",
-        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ", "o": "ْ", "p": "ة"};
+        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ", "o": "ْ", "p": "ة",
+        "}": "ئ", "Y": "ى", "&": "ؤ", "K": "ٍ", "F": "ً", "`": "ـٰ"};
 var _toABC = {};
 for (var key in _toAbjad) {
   if (_toAbjad.hasOwnProperty(key)) {
      _toABC[_toAbjad[key]] = key;
   }
 }
+_toAbjad['{'] = "ا";
 function toABC(str, backward) {
     var lookUpTable = backward ? _toAbjad : _toABC;
     abcString = "";
@@ -34,46 +36,65 @@ function toABC(str, backward) {
     }
     return abcString;
 }
-var dictionary;
-$.get(chrome.extension.getURL('/data/dictstems'), function(_dictionary) {
+function getStem(abcStem) {
+  var stem = "";
+  for (var i = 0; i < abcStem.length; i++) {
+    stem = toABC(abcStem[i], true);
+    if ( i !== abcStem.length - 1) {
+      stem += " ";
+    }
+  }
+  return stem;
+}
+var dictionary = [];
+$.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
     var inputArray = _dictionary.split('\n');
-    dictionary = inputArray.filter(function (rowString) {
-      return !rowString.startsWith(";");
-    });
-});
-var dictsuffixes;
-$.get(chrome.extension.getURL('/data/dictsuffixes'), function(_dictionary) {
-    var inputArray = _dictionary.split('\n');
-    dictsuffixes = inputArray.filter(function (rowString) {
-      return !rowString.startsWith(";");
-    });
-});
-var dictprefixes;
-$.get(chrome.extension.getURL('/data/dictprefixes'), function(_dictionary) {
-    var inputArray = _dictionary.split('\n');
-    dictprefixes = inputArray.filter(function (rowString) {
-      return !rowString.startsWith(";");
-    });
+    for (var i = 0; i < inputArray.length; i++) {
+      var line = inputArray[i];
+      if (line.length !== 0 && !line.startsWith(";")) {
+        var parts = line.split("\t");
+        if (parts.length >= 10) {
+          dictionary.push({
+            "arabic": toABC(parts[1], true),
+            "vocalized": toABC(parts[2], true),
+            "translation": parts[5],
+            "type": parts[8],
+            "stem": getStem(parts[10])
+          });
+        } else {
+          console.warn("Uncomplete entry line " + i);
+        }
+      }
+    }
 });
 
 
 function findInDatabase(word, result, options, done) {
-    var convertedWord = toABC(word);
-    var filteredArray = dictionary.filter(function (rowString) {
-      return rowString.split("\t")[0] === convertedWord;
+    console.log("Looking for: " + word);
+    var filteredArray = dictionary.filter(function (row) {
+      return row.arabic === word;
     });
     for (var i = 0; i < filteredArray.length; i++) {
-        var parts = filteredArray[i].split("\t");
-        result.push({
-            arabic: toABC(parts[0], true),
-            vocalized: toABC(parts[1], true),
-            translation: parts[3],
-            article: options.article
-        });
+        var entry = $.extend(true, {}, filteredArray[i]);
+        entry.options = options;
+        result.push(entry);
     }
-    // Remove article to nouns
-    if (word.startsWith("ال")) {
-        findInDatabase(word.substring(2), result, {article: true}, done);
+    // Remove prefixes / suffixes
+    if (word.startsWith("و") && !options.wa) {
+        options.wa = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("ل" && !options.li)) {
+        options.li = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("ب") && !options.bi) {
+        options.bi = true;
+        findInDatabase(word.substring(1), result, options, done);
+    } else if (word.startsWith("ال") && !options.el) {
+        options.el = true;
+        findInDatabase(word.substring(2), result, options, done);
+    } else if (word.endsWith("ة")) {
+        options.tam = true;
+        findInDatabase(word.substring(0, word.length - 1), result, options, done);
     } else {
         done(result);
     }
