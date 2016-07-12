@@ -53,14 +53,15 @@ $.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
       var line = inputArray[i];
       if (line.length !== 0 && !line.startsWith(";")) {
         var parts = line.split("\t");
-        if (parts.length >= 10) {
+        if (parts.length >= 11) {
           dictionary.push({
             "arabic": toABC(parts[1], true),
             "vocalized": toABC(parts[2], true),
             "translation": parts[5].startsWith('"') ? parts[5].substring(1, parts[5].length - 1) : parts[5],
             "type-code": parts[7],
             "type-human": parts[8].startsWith('"') ? parts[8].substring(1, parts[8].length - 1) : parts[8],
-            "stem": getStem(parts[10])
+            "stem": getStem(parts[10]),
+            "verb-form": parseInt(parts[11])
           });
         } else {
           console.warn("Uncomplete entry line " + i);
@@ -76,7 +77,7 @@ function findInDatabase(word, result, options, done) {
       if (options.verbImperfect) {
         return row.arabic === word && row['type-code'] === "VERB_IMPERFECT";
       } else if (options.el || options.ah || options.aat) {
-        return row.arabic === word && (row['type-code'] === "NOUN" || row['type-code'] === "ADJ");
+        return row.arabic === word && (row['type-code'] === "NOUN" || row['type-code'] === "ADJ" || row['type-code'] === 'NOUN_(PROPER)');
       } else {
         return row.arabic === word;
       }
