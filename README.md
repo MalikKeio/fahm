@@ -1,3 +1,8 @@
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://artemave.mit-license.org)
+Similar to Rikai-chan for Japanese on Firefox or Zhongwen for Chinese on Chrome, except this application is for Arabic.
 
-Simply the best Google Chrome translation extension - https://chrome.google.com/webstore/detail/aggiiclaiamajehmlfpkjmlbadmkledi
+Shows translation and vocalization, as well as stems.
+Based on the dictionary created by the Aratools team (http://aratools.com/).
+
+This is a fork of the Chrome Extension `translate_onhover`, from which the rendering engine was inspired.
+
+The code is licensed under the GPLv3 license.
