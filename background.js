@@ -57,8 +57,8 @@ $.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
           dictionary.push({
             "arabic": toABC(parts[1], true),
             "vocalized": toABC(parts[2], true),
-            "translation": parts[5],
-            "type": parts[8],
+            "translation": parts[5].startsWith('"') ? parts[5].substring(1, parts[5].length - 1) : parts[5],
+            "type": parts[8].startsWith('"') ? parts[8].substring(1, parts[8].length - 1) : parts[8],
             "stem": getStem(parts[10])
           });
         } else {
