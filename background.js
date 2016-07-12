@@ -39,7 +39,7 @@ function toABC(str, backward) {
 function getStem(abcStem) {
   var stem = "";
   for (var i = 0; i < abcStem.length; i++) {
-    stem = toABC(abcStem[i], true);
+    stem += toABC(abcStem[i], true);
     if ( i !== abcStem.length - 1) {
       stem += " ";
     }
