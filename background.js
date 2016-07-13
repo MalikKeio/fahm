@@ -10,19 +10,20 @@ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
 ga.src = 'https://ssl.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-var _toAbjad = {">":"أ", "<": "إ", "|": "آ", "A": "ا", "b": "ب", "t": "ت", "v": "ث", "j": "ج",
-        "H": "ح", "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س",
-        "$": "ش", "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
+var _toAbjad = {"'": "ء", "|": "آ", ">": "أ", "&": "ؤ", "<": "إ", "}": "ئ",
+        "A": "ا", "b": "ب", "p": "ة", "t": "ت", "v": "ث", "j": "ج", "H": "ح",
+        "x": "خ", "d": "د", "*": "ذ", "r": "ر", "z": "ز", "s": "س", "$": "ش",
+        "S": "ص", "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ", "_": "ـ",
         "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م", "n": "ن", "h": "ه",
-        "w": "و", "y": "ي", "'": "ء", "a": "َ", "i": "ِ", "u": "ُ", "~": "ّ", "o": "ْ", "p": "ة",
-        "}": "ئ", "Y": "ى", "&": "ؤ", "K": "ٍ", "F": "ً", "`": "ـٰ"};
+        "w": "و", "Y": "ى", "y": "ي", "F": "ً", "N": "ٌ", "K": "ٍ", "a": "َ",
+        "u": "ُ", "i": "ِ", "~": "ّ", "o": "ْ", "`": "ـٰ", "{": "ٱ", "P": "پ",
+        "J": "چ", "V": "ڤ", "G": "گ"}
 var _toABC = {};
 for (var key in _toAbjad) {
   if (_toAbjad.hasOwnProperty(key)) {
      _toABC[_toAbjad[key]] = key;
   }
 }
-_toAbjad['{'] = "ا";
 function toABC(str, backward) {
     var lookUpTable = backward ? _toAbjad : _toABC;
     abcString = "";
@@ -46,91 +47,105 @@ function getStem(abcStem) {
   }
   return stem;
 }
-var dictionary = [];
-$.get(chrome.extension.getURL('/data/stems.x'), function(_dictionary) {
-    var inputArray = _dictionary.split('\n');
-    for (var i = 0; i < inputArray.length; i++) {
-      var line = inputArray[i];
-      if (line.length !== 0 && !line.startsWith(";")) {
-        var parts = line.split("\t");
-        if (parts.length >= 11) {
-          dictionary.push({
-            "arabic": toABC(parts[1], true),
-            "vocalized": toABC(parts[2], true),
-            "translation": parts[5].startsWith('"') ? parts[5].substring(1, parts[5].length - 1) : parts[5],
-            "type-code": parts[7],
-            "type-human": parts[8].startsWith('"') ? parts[8].substring(1, parts[8].length - 1) : parts[8],
-            "stem": getStem(parts[10]),
-            "verb-form": parseInt(parts[11])
-          });
-        } else {
-          console.warn("Uncomplete entry line " + i);
+
+var dictprefixes = [], dictstems = [], dictsuffixes = [],
+    tableab = [], tableac = [], tablebc = [];
+$.getJSON(chrome.extension.getURL('/data/dictprefixes.json'), function(contents) {
+  dictprefixes = contents;
+});
+$.getJSON(chrome.extension.getURL('/data/dictstems.json'), function(contents) {
+  dictstems = contents;
+});
+$.getJSON(chrome.extension.getURL('/data/dictsuffixes.json'), function(contents) {
+  dictsuffixes = contents;
+});
+$.getJSON(chrome.extension.getURL('/data/tableab.json'), function(contents) {
+  tableab = contents;
+});
+$.getJSON(chrome.extension.getURL('/data/tableac.json'), function(contents) {
+  tableac = contents;
+});
+$.getJSON(chrome.extension.getURL('/data/tablebc.json'), function(contents) {
+  tablebc = contents;
+});
+
+function _findWord(word, dict) {
+  var results = [];
+  for (var i = 0; i < dict.length; i++) {
+    if (dict[i][0] === word) {
+      results.push(dict[i]);
+    }
+  }
+  return results;
+}
+function _checkAgainstTable(category1, category2, table) {
+  for (var i = 0; i < table.length; i++) {
+    if (table[i][0] === category1 && table[i][1] === category2) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+function findInDatabase(word) {
+  // FIXME We must strip the vocalization!
+  // Segmentation
+  var segmentations = [];
+  for (var i = 0; i <= 4 /*max prefix size is 4*/; i++) {
+    for (var j = 0; j <= 6 /*max suffix size is 6*/; j++) {
+      if (i + j < word.length) {
+        segmentations.push({
+          prefix: word.substring(0, i),
+          stem: word.substring(i, word.length - j),
+          suffix: word.substring(word.length - j)
+        });
+      }
+    }
+  }
+  console.log(segmentations);
+
+  var results = segmentations.filter(function(seg) {
+    var validPrefixes = _findWord(seg.prefix, dictprefixes);
+    if (validPrefixes.length === 0) return false;
+    var validStems = _findWord(seg.stem, dictstems);
+    if (validStems.length === 0) return false;
+    var validSuffixes = _findWord(seg.suffix, dictsuffixes);
+    if (validSuffixes.length === 0) return false;
+
+    var compatibleCombinations = []
+    for (var i = 0; i < validPrefixes.length; i++) {
+      for (var j = 0; j < validStems.length; j++) {
+        for (var k = 0; k < validSuffixes.length; k++) {
+          var pre = validPrefixes[i], stem = validStems[j], suf = validSuffixes[k];
+          if (_checkAgainstTable(pre[2], stem[2], tableab) &&
+              _checkAgainstTable(pre[2], suf[2], tableac) &&
+              _checkAgainstTable(stem[2], suf[2], tablebc) ) {
+            compatibleCombinations.push({
+              prefix: pre,
+              stem: stem,
+              suffix: suf
+            })
+          }
         }
       }
     }
-});
-
-
-function findInDatabase(word, result, options, done) {
-    console.log("Looking for: " + word);
-    var filteredArray = dictionary.filter(function (row) {
-      if (options.verbImperfect) {
-        return row.arabic === word && row['type-code'] === "VERB_IMPERFECT";
-      } else if (options.el || options.ah || options.aat) {
-        return row.arabic === word && (row['type-code'] === "NOUN" || row['type-code'] === "ADJ" || row['type-code'] === 'NOUN_(PROPER)');
-      } else {
-        return row.arabic === word;
-      }
-    });
-    for (var i = 0; i < filteredArray.length; i++) {
-        var entry = $.extend(true, {}, filteredArray[i]);
-        entry.options = options;
-        result.push(entry);
-    }
-    // Remove prefixes / suffixes
-    if (word.startsWith("و") && !options.wa) {
-        options.wa = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("ل" && !options.li)) {
-        options.li = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("ب") && !options.bi) {
-        options.bi = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("ي") && !options.verb) {
-        options.ya = true;
-        options.verbImperfect = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("ت") && !options.verb) {
-        options.ta = true;
-        options.verbImperfect = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("س") && !options.verb) {
-        options.sa = true;
-        options.verbImperfect = true;
-        findInDatabase(word.substring(1), result, options, done);
-    } else if (word.startsWith("ال") && !options.el) {
-        options.el = true;
-        findInDatabase(word.substring(2), result, options, done);
-    } else if (word.endsWith("ة")) {
-        options.ah = true;
-        findInDatabase(word.substring(0, word.length - 1), result, options, done);
-    } else if (word.endsWith("ات")) {
-        options.aat = true;
-        findInDatabase(word.substring(0, word.length - 2), result, options, done);
+    if (compatibleCombinations.length > 0) {
+      seg.compatibleCombinations = compatibleCombinations;
+      return true;
     } else {
-        done(result);
+      return false;
     }
+  });
+  return results;
 }
 function translate(word, ga_event_name, done) {
-  // FIXME Translate this word by hitting the database
-  findInDatabase(word, [], {}, function(result) {
-      if (result.length === 0) {
-          done("No result for " + word);
-      } else {
-          done(result);
-      }
-  })
+  var result = findInDatabase(word);
+  if (result.length === 0) {
+      done("No result for " + word);
+  } else {
+      done(result);
+  }
 }
 
 function figureOutSlTl(tab_lang) {
