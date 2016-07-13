@@ -86,19 +86,24 @@ function makeDict(filename, withStem) {
     var table = [];
     contentLines.forEach(function(line) {
       var parts = line.split('\t');
-      var word = toAbjad(parts[0]);
-      // Remove <pos>...</pos>
-      var posIndex = parts[3].indexOf('<pos>');
-      if (posIndex > -1) {
-        var newGloss = parts[3].substr(0, posIndex).trim();
-        if (newGloss !== "") parts[3] = newGloss;
-      }
+      try {
+          var word = toAbjad(parts[0]);
+          // Remove <pos>...</pos>
+          var posIndex = parts[3].indexOf('<pos>');
+          if (posIndex > -1) {
+            var newGloss = parts[3].substr(0, posIndex).trim();
+            if (newGloss !== "") parts[3] = newGloss;
+          }
 
-      var entry = [word, toAbjad(parts[1]), parts[2], parts[3]];
-      if (withStem) {
-        entry.push(stems[word + ":" + parts[2]]);
+          var entry = [word, toAbjad(parts[1]), parts[2], parts[3]];
+          if (withStem) {
+            entry.push(stems[word + ":" + parts[2]]);
+          }
+          table.push(entry);
+      } catch(e) {
+        console.log("Error on line: " + line);
+        throw e;
       }
-      table.push(entry);
     })
     fs.writeFile('../data/' + filename + '.json', JSON.stringify(table), function(err) {
        if (err) throw err;
