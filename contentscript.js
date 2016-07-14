@@ -1,4 +1,4 @@
-var debug = true;
+var debug = false;
 
 function log() {
   if (debug) {
@@ -88,7 +88,7 @@ function calculatePosition(x, y, $popup) {
 }
 
 function removeTashkil(str) {
-  return str.replace("َ", "").replace("ً", "").replace("ُ", "").replace("ٌ", "").replace("ِ", "").replace("ٍ", "").replace("ْ", "").replace("ّ", "");
+  return str.replace(/َ/g, "").replace(/ً/g, "").replace(/ُ/g, "").replace(/ٌ/g, "").replace(/ِ/g, "").replace(/ٍ/g, "").replace(/ْ/g, "").replace(/ّ/g, "");
 }
 
 
@@ -123,7 +123,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
         }
 
         var hit_elem = $(document.elementFromPoint(e.clientX, e.clientY));
-        var word_re = "\\p{L}+(?:['’]\\p{L}+)*"
+        var word_re = "\\p{InArabic}+(?:['’]\\p{InArabic}+)*"
         var parent_font_style = {
           'line-height': hit_elem.css('line-height'),
           'font-size': '1em',
@@ -153,7 +153,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
 
               if (XRegExp(word_re).test( node.textContent )) {
                 $(node).replaceWith(function() {
-                    return this.textContent.replace(XRegExp("^(.{"+Math.round( node.textContent.length/2 )+"}(?:\\p{L}|['’](?=\\p{L}))*)(.*)", 's'), function($0, $1, $2) {
+                    return this.textContent.replace(XRegExp("^(.{"+Math.round( node.textContent.length/2 )+"}(?:\\p{InArabic}|['’](?=\\p{InArabic}))*)(.*)", 's'), function($0, $1, $2) {
                         return '<transblock>'+TransOver.escape_html($1)+'</transblock><transblock>'+TransOver.escape_html($2)+'</transblock>';
                     });
                 });
@@ -201,9 +201,10 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
               else  {
                 hw = $(hit_word_elem).text();
                 log("got it: '"+hw+"'");
+                hw = removeTashkil(hw);
               }
             }
-
+            log(hw);
             return hw;
         });
 
