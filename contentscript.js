@@ -1,4 +1,4 @@
-var debug = false;
+var debug = true;
 
 function log() {
   if (debug) {
@@ -86,6 +86,11 @@ function calculatePosition(x, y, $popup) {
 
   return pos;
 }
+
+function removeTashkil(str) {
+  return str.replace("َ", "").replace("ً", "").replace("ُ", "").replace("ٌ", "").replace("ِ", "").replace("ٍ", "").replace("ْ", "").replace("ّ", "");
+}
+
 
 chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
 
