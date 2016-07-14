@@ -137,6 +137,9 @@ function findInDatabase(word) {
       return false;
     }
   });
+  if (results.length == 0) {
+    // FIXME TRY SECOND LOOKUP
+  }
   return results;
 }
 function translate(word, ga_event_name, done) {
