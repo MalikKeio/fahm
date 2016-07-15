@@ -6,6 +6,12 @@ function log() {
   }
 }
 
+XRegExp.addUnicodeData([
+    {
+        name: 'ArabicWord',
+        bmp: '\u0621-\u063A\u0640-\u0652\u047E\u0486\u04A4\u04AF'
+    }]);
+
 function registerTransoverComponent(component) {
   var html = 'lib/' + component + '.html';
   var script = 'lib/' + component + '.js';
@@ -123,7 +129,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
         }
 
         var hit_elem = $(document.elementFromPoint(e.clientX, e.clientY));
-        var word_re = "\\p{InArabic}+(?:['’]\\p{InArabic}+)*"
+        var word_re = "\\p{ArabicWord}+(?:['’]\\p{ArabicWord}+)*"
         var parent_font_style = {
           'line-height': hit_elem.css('line-height'),
           'font-size': '1em',
@@ -153,7 +159,7 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
 
               if (XRegExp(word_re).test( node.textContent )) {
                 $(node).replaceWith(function() {
-                    return this.textContent.replace(XRegExp("^(.{"+Math.round( node.textContent.length/2 )+"}(?:\\p{InArabic}|['’](?=\\p{InArabic}))*)(.*)", 's'), function($0, $1, $2) {
+                    return this.textContent.replace(XRegExp("^(.{"+Math.round( node.textContent.length/2 )+"}(?:\\p{ArabicWord}|['’](?=\\p{ArabicWord}))*)(.*)", 's'), function($0, $1, $2) {
                         return '<transblock>'+TransOver.escape_html($1)+'</transblock><transblock>'+TransOver.escape_html($2)+'</transblock>';
                     });
                 });
