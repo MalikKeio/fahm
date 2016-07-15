@@ -539,10 +539,10 @@ AbydjAn	>abiydojAn	N0	Abidjan
 >byk	>abiyk	N0	APEC (Asia-Pacific Economic Cooperation)
 Abyk	>abiyk	N0	APEC (Asia-Pacific Economic Cooperation)
 ;
-; AFP Corpus: Paris soccer stadium AbbÈ-Deschamps
+; AFP Corpus: Paris soccer stadium Abb√©-Deschamps
 ;; >abiyh_1
->byh	>abiyh	Nprop	AbbÈ (in "AbbÈ-Deschamps")
-Abyh	>abiyh	Nprop	AbbÈ (in "AbbÈ-Deschamps")
+>byh	>abiyh	Nprop	Abb√© (in "Abb√©-Deschamps")
+Abyh	>abiyh	Nprop	Abb√© (in "Abb√©-Deschamps")
 ;
 ;--- Abn
 ;; {ibon_1
@@ -610,8 +610,8 @@ AtlAntA	>atolAnotA	Nprop	Atlanta
 AtlAntyk	>atolAnotiyk	N0	Atlantic
 ;
 ;; >atolitiykuw_1
->tltykw	>atolitiykuw	N0	AtlÈtico
-Atltykw	>atolitiykuw	N0	AtlÈtico
+>tltykw	>atolitiykuw	N0	Atl√©tico
+Atltykw	>atolitiykuw	N0	Atl√©tico
 ;
 ;--- Atm
 ;; ma>otam_1
@@ -2949,18 +2949,18 @@ Az	|z	PV_ttAw_intr	be opposite;face
 &AzY	&AzaY	IV_0_Pass_yu	be opposite;be faced
 &Azy	&Azay	IV_Ann_Pass_yu	be opposite;be faced
 ;; <izA'_1
-<zA'	<izA'a	FW-Wa	towards;facing;regarding;vis-‡-vis     <pos><izA'a/PREP</pos>
-AzA'	<izA'a	FW-Wa	towards;facing;regarding;vis-‡-vis     <pos><izA'a/PREP</pos>
-<zA}	<izA}i	FW-Wa-i	towards;facing;regarding;vis-‡-vis     <pos><izA}i/PREP</pos>
-AzA}	<izA}i	FW-Wa-i	towards;facing;regarding;vis-‡-vis     <pos><izA}i/PREP</pos>
-<zA}	<izA}	FW-Wa-o	towards;facing;regarding;vis-‡-vis     <pos><izA}/PREP</pos>
-AzA}	<izA}	FW-Wa-o	towards;facing;regarding;vis-‡-vis     <pos><izA}/PREP</pos>
-b<zA'	bi<izA'i	FW-Wa	towards;facing;regarding;vis-‡-vis     <pos>bi<izA'i/PREP</pos>
-bAzA'	bi<izA'i	FW-Wa	towards;facing;regarding;vis-‡-vis     <pos>bi<izA'i/PREP</pos>
-b<zA}	bi<izA}i	FW-Wa-i	towards;facing;regarding;vis-‡-vis     <pos>bi<izA}i/PREP</pos>
-bAzA}	bi<izA}i	FW-Wa-i	towards;facing;regarding;vis-‡-vis     <pos>bi<izA}i/PREP</pos>
-b<zA}	bi<izA}	FW-Wa-o	towards;facing;regarding;vis-‡-vis     <pos>bi<izA}i/PREP</pos>
-bAzA}	bi<izA}	FW-Wa-o	towards;facing;regarding;vis-‡-vis     <pos>bi<izA}i/PREP</pos>
+<zA'	<izA'a	FW-Wa	towards;facing;regarding;vis-√†-vis     <pos><izA'a/PREP</pos>
+AzA'	<izA'a	FW-Wa	towards;facing;regarding;vis-√†-vis     <pos><izA'a/PREP</pos>
+<zA}	<izA}i	FW-Wa-i	towards;facing;regarding;vis-√†-vis     <pos><izA}i/PREP</pos>
+AzA}	<izA}i	FW-Wa-i	towards;facing;regarding;vis-√†-vis     <pos><izA}i/PREP</pos>
+<zA}	<izA}	FW-Wa-o	towards;facing;regarding;vis-√†-vis     <pos><izA}/PREP</pos>
+AzA}	<izA}	FW-Wa-o	towards;facing;regarding;vis-√†-vis     <pos><izA}/PREP</pos>
+b<zA'	bi<izA'i	FW-Wa	towards;facing;regarding;vis-√†-vis     <pos>bi<izA'i/PREP</pos>
+bAzA'	bi<izA'i	FW-Wa	towards;facing;regarding;vis-√†-vis     <pos>bi<izA'i/PREP</pos>
+b<zA}	bi<izA}i	FW-Wa-i	towards;facing;regarding;vis-√†-vis     <pos>bi<izA}i/PREP</pos>
+bAzA}	bi<izA}i	FW-Wa-i	towards;facing;regarding;vis-√†-vis     <pos>bi<izA}i/PREP</pos>
+b<zA}	bi<izA}	FW-Wa-o	towards;facing;regarding;vis-√†-vis     <pos>bi<izA}i/PREP</pos>
+bAzA}	bi<izA}	FW-Wa-o	towards;facing;regarding;vis-√†-vis     <pos>bi<izA}i/PREP</pos>
 ;
 ;; |s_1
 |s	|s	N	myrtle
@@ -3057,8 +3057,8 @@ AsbAn	<isobAn	N	Spaniards
 AsbAnx	<isobAnax	N0	spinach
 ;
 ;; <isobAnoyuwl_1
-<sbAnywl	<isobAnoyuwl	Nprop	EspaÒol
-AsbAnywl	<isobAnoyuwl	Nprop	EspaÒol
+<sbAnywl	<isobAnoyuwl	Nprop	Espa√±ol
+AsbAnywl	<isobAnoyuwl	Nprop	Espa√±ol
 ;
 ;; <isobidAj_1
 <sbdAj	<isobidAj	N	white lead;ceruse
@@ -4993,8 +4993,8 @@ AlAbAmA	>alAbAmA	Nprop	Alabama
 AlAskA	>alAsokA	N0	Alaska
 ;
 ;; >alAfiys_1
->lAfys	>alAfiys	Nprop	AlavÈs
-AlAfys	>alAfiys	Nprop	AlavÈs
+>lAfys	>alAfiys	Nprop	Alav√©s
+AlAfys	>alAfiys	Nprop	Alav√©s
 ;
 ;; |lAn_1
 |lAn	|lAn	Nprop	Allan;Allen;Alain
@@ -6133,7 +6133,7 @@ m&mn	mu&omin	Nall	believer
 ;; mu&omin_2
 m&mn	mu&omin	Nall	believer (Muslim)
 ;; musota>omin_1
-mst>mn	musota>omin	Nall	protÈgÈ
+mst>mn	musota>omin	Nall	prot√©g√©
 ;; mu&otaman_1
 m&tmn	mu&otaman	Nall	trustworthy;entrusted
 ;
@@ -6860,8 +6860,8 @@ An$wj	>ano$uwj	NapAt	anchovy
 An$ylwty	>ano$iyluwtiy	Nprop	Ancelotti
 ;
 ;; >ano$iyniyh_1
->n$ynyh	>ano$iyniyh	Nprop	EnchaÓnÈ
-An$ynyh	>ano$iyniyh	Nprop	EnchaÓnÈ
+>n$ynyh	>ano$iyniyh	Nprop	Encha√Æn√©
+An$ynyh	>ano$iyniyh	Nprop	Encha√Æn√©
 ;
 ;; >anoTaloyAs_1
 >nTlyAs	>anoTaloyAs	Nprop	Antalyas
@@ -7195,10 +7195,10 @@ mt>ny	muta>an~iy	NapAt	circumspect;prudent
 >nY	>an~aY	FW-Wa	where?;how?;however     <pos>>an~aY/CONJ</pos>
 AnY	>an~aY	FW-Wa	where?;how?;however     <pos>>an~aY/CONJ</pos>
 ;
-; ETA's Ignacio Garcia Arregui (IÒaki de Renteria)
+; ETA's Ignacio Garcia Arregui (I√±aki de Renteria)
 ;; <iniyAkiy_1
-<nyAky	<iniyAkiy	Nprop	IÒaki
-AnyAky	<iniyAkiy	Nprop	IÒaki
+<nyAky	<iniyAkiy	Nprop	I√±aki
+AnyAky	<iniyAkiy	Nprop	I√±aki
 ;
 ;; <iniyrojiy_1
 <nyrjy	<iniyrojiy	Nprop	Energy
@@ -9351,7 +9351,7 @@ bAnyt$bAkdy	bAniyt$obAkodiy	Nprop	Panitchpakdi
 ;
 ; AFP Corpus: Czech soccer team Banik Ostrava
 ;; bAniyk_1
-bAnyk	bAniyk	Nprop	BanÌk
+bAnyk	bAniyk	Nprop	Ban√≠k
 ;
 ;; bAwto$ir_1
 bAwt$r	bAwto$ir	Nprop	Voucher
@@ -14289,7 +14289,7 @@ tblg	tabal~ag	IV_intr	be informed
 ;; bulogap_1
 blg	bulog	Nap	competency;adequacy
 ;; balAg_1
-blAg	balAg	NduAt	communiquÈ;report;notification;notice
+blAg	balAg	NduAt	communiqu√©;report;notification;notice
 ;; baliyg_1
 blyg	baliyg	Nall	orator
 blgA'	bulagA'	N0_Nh	orators
@@ -16274,7 +16274,7 @@ byrwqrATy	biyruwqrATiy~	Nall	bureaucratic     <pos>biyruwqrATiy~/ADJ</pos>
 byrwqrATy	biyruwqrATiy~	Nap	bureaucracy     <pos>biyruwqrATiy~/NOUN</pos>
 ;
 ;; biyruwn_1
-byrwn	biyruwn	Nprop	PerÛn
+byrwn	biyruwn	Nprop	Per√≥n
 ;
 ;; biyruwniy~_1
 byrwny	biyruwniy~	N0	Biruni;Birouni
@@ -16605,7 +16605,7 @@ AbynA}	>aboyinA}	Nhy	eloquent
 ;; bay~inap_1
 byn	bay~in	NapAt	proof;evidence
 ;; bayAn_1
-byAn	bayAn	NduAt	communiquÈ;statement;declaration
+byAn	bayAn	NduAt	communiqu√©;statement;declaration
 ;; bayAn_2
 byAn	bayAn	N0	Bayan
 ;; bayAnAt_1
@@ -24039,10 +24039,10 @@ jwAl	juwAl	N/At	sack
 jwAn	juwAn	Ndip	June
 ;
 ;; jwAnotanAmuw_1
-jwAntnAmw	jwAnotanAmuw	N0	Guant·namo
-gwAntnAmw	gwAnotanAmuw	N0	Guant·namo
-jwAntAnAmw	jwAnotAnAmuw	N0	Guant·namo
-gwAntAnAmw	gwAnotAnAmuw	N0	Guant·namo
+jwAntnAmw	jwAnotanAmuw	N0	Guant√°namo
+gwAntnAmw	gwAnotanAmuw	N0	Guant√°namo
+jwAntAnAmw	jwAnotAnAmuw	N0	Guant√°namo
+gwAntAnAmw	gwAnotAnAmuw	N0	Guant√°namo
 ;
 ;; juwAnotiy_1
 jwAnty	juwAnotiy	Ndu	glove
@@ -27298,8 +27298,8 @@ HAsb	HAsib	Nall	calculator;computer
 ;; maHosuwb_1
 mHswb	maHosuwb	N-ap	calculated;measured     <pos>maHosuwb/ADJ</pos>
 ;; maHosuwb_2
-mHswb	maHosuwb	Nall	protÈgÈ;favorite;patronised
-mHAsyb	maHAsiyb	Ndip	protÈgÈs;favorites;patronised
+mHswb	maHosuwb	Nall	prot√©g√©;favorite;patronised
+mHAsyb	maHAsiyb	Ndip	prot√©g√©s;favorites;patronised
 ;; maHosuwbiy~ap_1
 mHswby	maHosuwbiy~	Nap	patronage;favoritism     <pos>maHosuwbiy~/NOUN</pos>
 ;; muHAsib_1
@@ -30281,11 +30281,11 @@ mHAmy	muHAmiy	NAn_Nayn	lawyer;defense counsel
 mHAm	muHAm	Nuwn_Niyn	lawyers;defense counsel
 mHAmy	muHAmiy	NapAt	lawyer;defense counsel
 ;; muHotamiy_1
-mHtmy	muHotamiy	N0_Nh	protÈgÈ
-mHtm	muHotam	NK	protÈgÈ
-mHtmy	muHotamiy	NAn_Nayn	protÈgÈs
-mHtm	muHotam	Nuwn_Niyn	protÈgÈs
-mHtmy	muHotamiy	NapAt	protÈgÈ
+mHtmy	muHotamiy	N0_Nh	prot√©g√©
+mHtm	muHotam	NK	prot√©g√©
+mHtmy	muHotamiy	NAn_Nayn	prot√©g√©s
+mHtm	muHotam	Nuwn_Niyn	prot√©g√©s
+mHtmy	muHotamiy	NapAt	prot√©g√©
 ;
 ;--- Hn
 ;; Han~an_1
@@ -34059,8 +34059,8 @@ xTAb	xiTAb	N/At	letter
 ;; xiTAbiy~_1
 xTAby	xiTAbiy~	Nall	oratorical     <pos>xiTAbiy~/ADJ</pos>
 ;; xaTiyb_1
-xTyb	xaTiyb	N/ap	fiancÈ
-xTyb	xaTiyb	Nap	fiancÈe
+xTyb	xaTiyb	N/ap	fianc√©
+xTyb	xaTiyb	Nap	fianc√©e
 ;; xaTiyb_2
 xTyb	xaTiyb	N/ap	orator;lecturer;preacher
 ;; xaTiyb_3
@@ -34076,7 +34076,7 @@ mxATb	muxATab	NapAt	conversation;addressing
 ;; taxATub_1
 txATb	taxATub	NduAt	conversation;dialogue
 ;; xATib_1
-xATb	xATib	Ndu	suitor;fiancÈ
+xATb	xATib	Ndu	suitor;fianc√©
 xTAb	xuT~Ab	N	suitors
 xTAb	xuT~Ab	N	matchmakers
 ;; xATibap_1
@@ -36906,7 +36906,7 @@ dwAjn	dawAjin	Ndip	poultry
 ;; mudaj~an_1
 mdjn	mudaj~an	Nall	domesticated     <pos>mudaj~an/ADJ</pos>
 ;; mudaj~an_2
-mdjn	mudaj~an	Nuwn_Niyn	MudÈjars
+mdjn	mudaj~an	Nuwn_Niyn	Mud√©jars
 ;
 ;--- djnb
 ;; dujanobir_1
@@ -40770,7 +40770,7 @@ dyzny	diyzoniy	Nprop	Disney
 ; Laurent Desire Kabila
 ;; diyziyriyh_1
 dyzyryh	diyziyriyh	Nprop	Desire
-dyzyryh	diyziyriyh	Nprop	DesirÈe
+dyzyryh	diyziyriyh	Nprop	Desir√©e
 ;
 ;--- dys
 ;; diys_1
@@ -40783,7 +40783,7 @@ dysmbr	diysamobir	N0	December
 dsmbr	disamobir	N0	December
 ;
 ;--- dy$
-; AFP Corpus: Paris soccer stadium AbbÈ-Deschamps
+; AFP Corpus: Paris soccer stadium Abb√©-Deschamps
 ;; diy$An_1
 dy$An	diy$An	Nprop	Deschamps
 ;
@@ -40852,10 +40852,10 @@ dykmAn	diykomAn	Nprop	Dickman
 dykwjy	diykuwjiy	Nprop	Decugis
 ;
 ;; diykuwr_1
-dykwr	diykuwr	N/At	dÈcor;interior decoration
+dykwr	diykuwr	N/At	d√©cor;interior decoration
 ;
 ;; diykuwlotiyh_1
-dykwltyh	diykuwlotiyh	N	dÈcolletÈ
+dykwltyh	diykuwlotiyh	N	d√©collet√©
 ;
 ;--- dyl
 ; AFP corpus: "Punta del Este"
@@ -44800,8 +44800,8 @@ rsAm	ras~Am	Nall	artist;painter
 ;; risAmap_1
 rsAm	risAm	Nap	ordination;consecration
 ;; rawosam_1
-rwsm	rawosam	Ndu	clichÈ
-rwAsm	rawAsim	Ndip	clichÈs
+rwsm	rawosam	Ndu	clich√©
+rwAsm	rawAsim	Ndip	clich√©s
 ;; marosam_1
 mrsm	marosam	Ndu	studio
 mrAsm	marAsim	Ndip	regulations;protocol
@@ -48879,7 +48879,7 @@ rn	rin	IV-n	seize;overcome;prevail
 ;; riyAn_1
 ryAn	riyAn	N	Riyan
 ;
-; ETA's Ignacio Garcia Arregui (IÒaki de Renteria)
+; ETA's Ignacio Garcia Arregui (I√±aki de Renteria)
 ;; riynotiyrA_1
 ryntyrA	riynotiyrA	Nprop	Renteria
 ryntryA	riynotiriyA	Nprop	Renteria
@@ -49536,7 +49536,7 @@ mzArE	mazAriE	N0	Farms
 ;; mazoraEAniy~_1
 mzrEAny	mazoraEAniy~	Nall	farmer     <pos>mazoraEAniy~/ADJ</pos>
 ;; tazoriyE_1
-tzryE	tazoriyE	NduAt	agriculturalization (vis-‡-vis industrialization)
+tzryE	tazoriyE	NduAt	agriculturalization (vis-√†-vis industrialization)
 ;; muzAraEap_1
 mzArE	muzAraE	NapAt	temporary sharecropping
 ;; zAriE_1
@@ -53713,7 +53713,7 @@ s*by	sa*abiy~	N-ap	related to rue;herb of grace     <pos>sa*abiy~/ADJ</pos>
 ;
 ;--- s*j
 ;; sa*Ajap_1
-s*Aj	sa*Aj	Nap	naivetÈ;innocence
+s*Aj	sa*Aj	Nap	naivet√©;innocence
 ;; sA*ij_1
 sA*j	sA*ij	N/ap	naive     <pos>sA*ij/ADJ</pos>
 s*j	su*~aj	N	naive
@@ -57600,8 +57600,8 @@ snwnw	sunuwnuw	NapAt	sununu;swallow (bird)
 snyh	sniyh	Nprop	Sneh
 ;
 ;; sinoyuwr_1
-snywr	sinoyuwr	N0	SeÒor
-snywr	sinoyuwr	Nap	SeÒora
+snywr	sinoyuwr	N0	Se√±or
+snywr	sinoyuwr	Nap	Se√±ora
 ;
 ;--- shb
 ;; >asohab_1
@@ -81787,7 +81787,7 @@ EwA'	EuwA'	N0_Nh	howling;howls
 EwA&	EuwA&	Nh	howling;howls
 EwA}	EuwA}	Nhy	howling;howls
 ;; Eaw~A'_1
-EwA'	Eaw~A'	N0_Nh	Boˆtes (contellation)
+EwA'	Eaw~A'	N0_Nh	Bo√∂tes (contellation)
 ;; muEAwiyap_1
 mEAwyp	muEAwiyap	N0	Mu'awiya
 ;; muEAwiyap_2
@@ -82872,8 +82872,8 @@ gryb	gariyb	Nall	stranger;foreigner
 grbA'	gurabA'	N0_Nh	strangers;foreigners
 grbA&	gurabA&	Nh	strangers;foreigners
 grbA}	gurabA}	Nhy	strangers;foreigners
->grAb	>agorAb	N	strangers;foreigners;ÈmigrÈs
-AgrAb	>agorAb	N	strangers;foreigners;ÈmigrÈs
+>grAb	>agorAb	N	strangers;foreigners;√©migr√©s
+AgrAb	>agorAb	N	strangers;foreigners;√©migr√©s
 ;; gariybap_1
 gryb	gariyb	Napdu	oddity
 grA}b	garA}ib	Ndip	oddities
@@ -87578,7 +87578,7 @@ frAns	frAnos	Nprop	France
 frAnsA	frAnosA	Nprop	Fransa
 ;
 ;; frAnosuwA_1
-frAnswA	frAnosuwA	Nprop	FranÁois
+frAnswA	frAnosuwA	Nprop	Fran√ßois
 ;
 ;; frAnosiysokuw_1
 frAnsyskw	frAnosiysokuw	Nprop	Francisco
@@ -88578,7 +88578,7 @@ frnsA	faranosA	N0	France
 frnsAwy	faranosAwiy~	Nall	French     <pos>faranosAwiy~/NOUN</pos>
 frnsAwy	faranosAwiy~	Nall	French     <pos>faranosAwiy~/ADJ</pos>
 ;; franosuwA_1
-frnswA	franosuwA	Nprop	FranÁois
+frnswA	franosuwA	Nprop	Fran√ßois
 ;; tafaronus_1
 tfrns	tafaronus	N/At	Frenchification
 ;
@@ -92598,7 +92598,7 @@ mqAbs	maqAbis	Ndip	socket
 <qtbAs	{iqotibAs	N/At	quotation;acquisition;adaptation
 AqtbAs	{iqotibAs	N/At	quotation;acquisition;adaptation
 ;; qAbis_1
-qAbs	qAbis	Ndip	GabËs (Tun.)
+qAbs	qAbis	Ndip	Gab√®s (Tun.)
 ;; qAbis_2
 qAbs	qAbis	Ndu	electrical plug
 ;; muqotabas_1
@@ -92837,7 +92837,7 @@ mqbwl	maqobuwl	Nall	accepted;welcome;admitted     <pos>maqobuwl/ADJ</pos>
 mqbwly	maqobuwliy~	Nap	acceptability     <pos>maqobuwliy~/NOUN</pos>
 ;; muqAbil_1
 mqAbl	muqAbil	N	in exchange for;in compensation for
-mqAbl	muqAbil	N	opposite to;corresponding to;vis-‡-vis
+mqAbl	muqAbil	N	opposite to;corresponding to;vis-√†-vis
 ;; muqobil_1
 mqbl	muqobil	N-ap	next;coming;approaching     <pos>muqobil/ADJ</pos>
 ;; mutaqAbil_1
@@ -94082,7 +94082,7 @@ AqtrAb	{iqotirAb	N/At	approach;approximation
 ;; muqar~ab_1
 mqrb	muqar~ab	Nall	close;near     <pos>muqar~ab/ADJ</pos>
 ;; muqar~ab_2
-mqrb	muqar~ab	Nall	close companion;protÈgÈ;intimate
+mqrb	muqar~ab	Nall	close companion;prot√©g√©;intimate
 ;; muqArib_1
 mqArb	muqArib	Nall	approximating     <pos>muqArib/ADJ</pos>
 ;; mutaqArib_1
@@ -98624,21 +98624,21 @@ mqhqh	muqahoqih	N-ap	hilarious     <pos>muqahoqih/ADJ</pos>
 qhw	qahow	Napdu	coffee
 qhw	qahaw	NAt	coffees
 ;; qahowAtiy~_1
-qhwAty	qahowAtiy~	N-ap	cafÈ manager     <pos>qahowAtiy~/ADJ</pos>
+qhwAty	qahowAtiy~	N-ap	caf√© manager     <pos>qahowAtiy~/ADJ</pos>
 ;; qahowAtiy~_2
 qhwAty	qahowAtiy~	N0	Qahwati
 ;; qahowAtiy~ap_1
-qhwAty	qahowAtiy~	Nap	cafÈ owners     <pos>qahowAtiy~/NOUN</pos>
+qhwAty	qahowAtiy~	Nap	caf√© owners     <pos>qahowAtiy~/NOUN</pos>
 ;; qahowajiy~_1
-qhwjy	qahowajiy~	N-ap	cafÈ manager;coffee cook     <pos>qahowajiy~/ADJ</pos>
+qhwjy	qahowajiy~	N-ap	caf√© manager;coffee cook     <pos>qahowajiy~/ADJ</pos>
 ;; maqohaY_1
-mqhY	maqohaY	N0	cafÈ;coffeehouse
-mqhA	maqohA	Nhy	cafÈ;coffeehouse
-mqhy	maqohay	NAn_Nayn	cafÈs;coffeehouses
-mqAhy	maqAhiy	N0_Nh	cafÈs;coffeehouses
-mqAh	maqAh	NK	cafÈs;coffeehouses
+mqhY	maqohaY	N0	caf√©;coffeehouse
+mqhA	maqohA	Nhy	caf√©;coffeehouse
+mqhy	maqohay	NAn_Nayn	caf√©s;coffeehouses
+mqAhy	maqAhiy	N0_Nh	caf√©s;coffeehouses
+mqAh	maqAh	NK	caf√©s;coffeehouses
 ;; maqohAp_1
-mqhA	maqohA	Napdu	cafÈ;coffeehouse
+mqhA	maqohA	Napdu	caf√©;coffeehouse
 ;
 ;--- qhy
 ;; qahiy-a_1
@@ -100050,7 +100050,7 @@ kAng	kAnog	Nprop	Kang
 kAnkAn	kAnokAn	N0	Can-Can
 ;
 ;; kAnokuwn_1
-kAnkwn	kAnokuwn	N0	Canc˙n
+kAnkwn	kAnokuwn	N0	Canc√∫n
 ;
 ;--- kAnw
 ;; kAnuw_1
@@ -104630,7 +104630,7 @@ kwyty	kuwayotiy~	Nall	Kuwaiti     <pos>kuwayotiy~/NOUN</pos>
 kwyty	kuwayotiy~	Nall	Kuwaiti     <pos>kuwayotiy~/ADJ</pos>
 ;
 ;; kuwt_1
-kwt	kuwt	N0	CÙte
+kwt	kuwt	N0	C√¥te
 ;
 ; AFP corpus: Energie Cottbus (German soccer team)
 ;; kuwtobuws_1
@@ -105172,7 +105172,7 @@ kwnyAk	kuwnoyAk	N	cognac
 ;
 ;--- kwhl
 ;; kuwholir_1
-kwhlr	kuwholir	Nprop	Kˆhler;Koehler
+kwhlr	kuwholir	Nprop	K√∂hler;Koehler
 ;
 ;--- kwhy
 ;; kuwhiyn_1
@@ -106752,14 +106752,14 @@ lAHq	lAHiq	N-ap_L	attached;joined     <pos>lAHiq/ADJ</pos>
 lAHq	lAHiq	Napdu_L	adjunct;appendage
 lwAHq	lawAHiq	Ndip_L	adjuncts;appendages
 ;; muloHaq_1
-mlHq	muloHaq	Nall	attachÈ
+mlHq	muloHaq	Nall	attach√©
 ;; muloHaq_2
 mlHq	muloHaq	N-ap	appended;adjacent;annexed     <pos>muloHaq/ADJ</pos>
 ;; muloHaqAt_1
 mlHq	muloHaq	NAt	appendix;addendum
 mlAHq	malAHiq	Ndip	appendices;addenda
 ;; muloHaqiy~ap_1
-mlHqy	muloHaqiy~	NapAt	attachÈ's section     <pos>muloHaqiy~/NOUN</pos>
+mlHqy	muloHaqiy~	NapAt	attach√©'s section     <pos>muloHaqiy~/NOUN</pos>
 ;; mulAHiq_1
 mlAHq	mulAHiq	Nall	follower;companion
 ;; mutalAHiq_1
@@ -110666,7 +110666,7 @@ m&wn	mu&uwn	N	navels;umbilical holes
 ;; mu&onap_1
 m&n	mu&on	Nap	provisions;supplies
 m&wn	ma&uwn	Nap	provisions;supplies
-m&n	mu&an	N	provisions;supplies;matÈriel
+m&n	mu&an	N	provisions;supplies;mat√©riel
 ;
 ;--- mAnj
 ;; mAnojuw_1
@@ -113999,7 +113999,7 @@ mql	muqal	N	eyes;eyeballs
 ;--- mqn
 ; village in Baalbek province
 ;; maqonap_1
-mqnp	maqonap	Nprop	MaqnÈ
+mqnp	maqonap	Nprop	Maqn√©
 ;
 ;--- mqnq
 ;; maqAniq_1
@@ -114731,9 +114731,9 @@ mmtlk	mumotalak	NAt	property;possessions;dependencies
 ;
 ;--- mlm
 ;; mal~iym_1
-mlym	mal~iym	NduAt	milliËme
-mlym	maliym	NduAt	milliËme
-mlAlym	malAliym	Ndip	milliËmes
+mlym	mal~iym	NduAt	milli√®me
+mlym	maliym	NduAt	milli√®me
+mlAlym	malAliym	Ndip	milli√®mes
 ;; mlm_1
 mlm	mlm	FW	millimeter     <pos>mlm/ABBREV</pos>
 mm	mm	FW	millimeter     <pos>mm/ABBREV</pos>
@@ -125343,7 +125343,7 @@ nymyv	niymiyv	Nprop	Nemeth
 ;
 ;--- nyny
 ;; niyniyuw_1
-nynyw	niyniyuw	N0	NiÒo
+nynyw	niyniyuw	N0	Ni√±o
 ;
 ;--- nyw
 ;; niyuw_1
@@ -128218,7 +128218,7 @@ hny}	haniy}	NapAt	healthful;beneficial;pleasant
 hny}	haniy}	NAn_Nayn	healthful;beneficial;pleasant
 hny}	haniy}	Nuwn_Niyn	healthful;beneficial;pleasant
 ;; haniy}_1
-hny}	haniy}	NF	bon appËtit!     <pos>haniy}/ADV</pos>
+hny}	haniy}	NF	bon app√®tit!     <pos>haniy}/ADV</pos>
 ;; tahoni}ap_1
 thn}	tahoni}	Napdu	congratulations
 thAn}	tahAni}	Ndip	congratulations
@@ -129461,7 +129461,7 @@ hyw	hiyuw	Nprop	Hugh
 ;--- hywr
 ; AFP corpus spelling
 ;; hiyuwrAkAn_1
-hywrAkAn	hiyuwrAkAn	Nprop	Hurac·n
+hywrAkAn	hiyuwrAkAn	Nprop	Hurac√°n
 ;
 ;--- hywz
 ;; hiyuwz_1
@@ -130976,8 +130976,8 @@ wrdy	warodiy~	Nap	work shift;shift rotation     <pos>warodiy~/NOUN</pos>
 ;; waros_1
 wrs	waros	N	dye plant
 ;; >aworAs_1
->wrAs	>aworAs	N	AurËs (mountains in Algeria)
-AwrAs	>aworAs	N	AurËs (mountains in Algeria)
+>wrAs	>aworAs	N	Aur√®s (mountains in Algeria)
+AwrAs	>aworAs	N	Aur√®s (mountains in Algeria)
 ;
 ;--- wr$
 ;; wara$-i_1
