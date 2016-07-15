@@ -94,7 +94,7 @@ function calculatePosition(x, y, $popup) {
 }
 
 function removeTashkil(str) {
-  return str.replace(/َ/g, "").replace(/ً/g, "").replace(/ُ/g, "").replace(/ٌ/g, "").replace(/ِ/g, "").replace(/ٍ/g, "").replace(/ْ/g, "").replace(/ّ/g, "");
+  return str.replace(/َ/g, "").replace(/ً/g, "").replace(/ُ/g, "").replace(/ٌ/g, "").replace(/ِ/g, "").replace(/ٍ/g, "").replace(/ْ/g, "").replace(/ّ/g, "").replace(/ـ/g, "");
 }
 
 

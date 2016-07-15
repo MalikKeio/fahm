@@ -9,8 +9,12 @@ setTimeout(function(){
     var e = { clientX: 0, clientY: 0 };
     showPopup(e, TransOver.formatTranslation(response.translation));
   });
-  chrome.extension.sendRequest({handler: 'translate', word: "أملاك"}, function(response) {
+  chrome.extension.sendRequest({handler: 'translate', word: "املاك"}, function(response) {
     var e = { clientX: 0, clientY: 250 };
+    showPopup(e, TransOver.formatTranslation(response.translation));
+  });
+  chrome.extension.sendRequest({handler: 'translate', word: "ابنكما"}, function(response) {
+    var e = { clientX: 400, clientY: 0 };
     showPopup(e, TransOver.formatTranslation(response.translation));
   });
 
