@@ -97,7 +97,7 @@ function makeDict(filename, withStem) {
 
           var entry = [word, toAbjad(parts[1]), parts[2], parts[3]];
           if (withStem) {
-            entry.push(stems[word + ":" + parts[2]]);
+            entry.push(stems[word + ":" + parts[2]] || "");
           }
           table.push(entry);
       } catch(e) {
