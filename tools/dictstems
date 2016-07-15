@@ -57907,6 +57907,8 @@ mstA'	musotA'	NapAt	unhappy;displeased;dissatisfied
 mstA&	musotA&	Nuwn_Niyn	unhappy;displeased;dissatisfied
 ;; say~i'_1
 sy'	say~i'	N0	bad
+; Adds a sub-standard ortography
+sy}	say~i'	N0	bad (ortographic variant of سيء)
 sy}	say~i}	N0F	bad
 sy}	say~i}	NapAt	bad
 sy}	say~i}	NAn_Nayn	bad

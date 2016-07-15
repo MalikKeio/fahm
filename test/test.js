@@ -17,5 +17,9 @@ setTimeout(function(){
     var e = { clientX: 400, clientY: 0 };
     showPopup(e, TransOver.formatTranslation(response.translation));
   });
+  chrome.extension.sendRequest({handler: 'translate', word: "اسمه"}, function(response) {
+    var e = { clientX: 400, clientY: 850 };
+    showPopup(e, TransOver.formatTranslation(response.translation));
+  });
 
 }, 500);
