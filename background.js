@@ -88,8 +88,14 @@ function _checkAgainstTable(category1, category2, table) {
 }
 
 
+function removeTashkil(str) {
+  return str.replace(/َ/g, "").replace(/ً/g, "").replace(/ُ/g, "").replace(/ٌ/g, "").replace(/ِ/g, "").replace(/ٍ/g, "").replace(/ْ/g, "").replace(/ّ/g, "").replace(/ـ/g, "");
+}
+
 function findInDatabase(word) {
-  // FIXME We must strip the vocalization!
+  // We must strip the vocalization!
+  word = removeTashkil(word);
+
   // Segmentation
   var segmentations = [];
   for (var i = 0; i <= 4 /*max prefix size is 4*/; i++) {

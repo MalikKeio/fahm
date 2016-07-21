@@ -93,11 +93,6 @@ function calculatePosition(x, y, $popup) {
   return pos;
 }
 
-function removeTashkil(str) {
-  return str.replace(/َ/g, "").replace(/ً/g, "").replace(/ُ/g, "").replace(/ٌ/g, "").replace(/ِ/g, "").replace(/ٍ/g, "").replace(/ْ/g, "").replace(/ّ/g, "").replace(/ـ/g, "");
-}
-
-
 chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
 
     function process(e) {
@@ -207,7 +202,6 @@ chrome.extension.sendRequest({handler: 'get_options'}, function(response) {
               else  {
                 hw = $(hit_word_elem).text();
                 log("got it: '"+hw+"'");
-                hw = removeTashkil(hw);
               }
             }
             log(hw);
