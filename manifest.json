@@ -2,7 +2,7 @@
   "name": "Fahm Arabic Pop-up Dictionary",
   "short_name": "Fahm",
   "manifest_version": 2,
-  "version": "0.1.6.0",
+  "version": "0.1.6.1",
   "icons": { "16": "to_16.png", "48": "to_48.png", "128": "to_128.png" },
   "description": "Hover, click or select to translate from Arabic to English",
   "background": { "scripts": [
