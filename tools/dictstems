@@ -6806,7 +6806,7 @@ Ansy	>anasiy~	Nap	humanism;humanitarian     <pos>>anasiy~/NOUN</pos>
 >nys	>aniys	Nall	affable;sociable
 Anys	>aniys	Nall	affable;sociable
 ;; <inosAn_1
-<nsAn	<inosAn	N/ap	human being
+<fn	<inosAn	N/ap	human being
 AnsAn	<inosAn	N/ap	human being
 >nAs	>unAs	N	human beings
 AnAs	>unAs	N	human beings
@@ -136007,3 +136007,45 @@ yldrm	yilodirim	Nprop	Yıldırım (Turkish prime minister)
 gwln	guwln	Nprop	Gülen (Turkish political figure)
 mnbj	manobij	Nprop	Manbij (city in Syria)
 fAynn$Al	fAyonano$Al	N	Financial (as in Financial Times)
+>ndrwyd	>anodoruwiyd	Nprop	Android
+Andrwyd	>anodoruwiyd	Nprop	Android
+<nfwgrAf	>inofuwgorAf	N	Infographics, Information graphics
+AnfwgrAf	>inofuwgorAf	N	Infographics, Information graphics
+zlAtAn	zlAtAn	Nprop	Zlatan (Swedish football player)
+>myrktAn	>amiyrkatAn	N	Americas
+<nswlyn	<insuwliyn	N	Insulin
+twlyf	tawoliyf	N	Video editing (from وَلَّفَ, "to blend, to mix")
+ywAn	yuwAn	N	Yuan, Renminbi (Chinese currency)
+rnmynby	ranmiynbiy	N	Yuan, Renminbi (Chinese currency)
+jyAw	jiyAw	NduAt	Jiao (Chinese currency, 1/10 yuan)
+fn	fin	N	Fen (Chinese currency, 1/100 yuan)
+Hwvy	Huwviy~	Nall	Houthi (Zaidi Shia-led movement from Sa'dah, northern Yemen)
+zhrA'	zahorA'	N	Zahra' (given name, meaning beautiful, bright, shining and brilliant)
+Ezwly	Eazuwliy	N	Azouli (name of al-Azouli military jail in Egypt)
+AlfrA	Alfar~A	Nprop	Al-Farra (surname)
+Alflwjp	Alfal~uwjap	Nprop	Fallujah (Iraki city)
+AlqyArp	Alqay~Arap	Nprop	Qayyarah (Iraki city)
+AlkAZmyp	AlkAZimiy~ap	Nprop	Al-Kāẓimiyyah (northern neighbourhood of Baghdad)
+m*Hj	ma*oHij	N	Madhhij (Arabic tribe)
+m*Hjy	ma*oHijiy~	Nall	Madhhiji (from Madhhij, an Arabic tribe)
+mgrd	mugar~id	Nall	The one that warbles, i.e. twitter user
+gwgl	guwgl	Nprop	Google
+mmnhj	mumanohaj	Nall	systematized
+bsysw	bsiysuw	Nprop	Bsissou (surname)
+tjsyr	tajosiyr	N	bridging (from جَسَّرَ)
+rwytlngn	ruwiytlingin	Nprop	Reutlingen (Germany)
+ryjyny	riyjiyniy	Nprop	Regeni
+srbrnytsA	sribriniytsA	Nprop	Srebrenica
+slfAkyr	salfAkiyr	Nprop	Salva Kiir Mayardit (South Sudanese president)
+myArdyt	nayArdiyt	Nprop	Salva Kiir Mayardit (South Sudanese president)
+EAlq	EAliq	Nall	stuck, not yet settled, unresolved
+frjynyA	firjiyniyA	Nprop	Virginia
+kwrtwlmw$	kuwrtuwlmuw$	Nprop	Kurtulmuş (Turkish politician)
+fwn	fuwn	Nprop	phone (as in iPhone)
+lwHy	lawoHiy~	NapAt	tablet (electronic device)
+mqtdY	muqotadY	Nprop	Muqtadā (first name of Muqtada al-Sadr, religious and popular figure in Iraq)
+mndrys	mindiriys	Nprop	Turkish political figure, Prime Minister between 1950-1960
+<njrlyk	<injirliyk	Nprop	İncirlik (Turkey)
+fAqm	fAqam	PV	aggravate;worsen
+fAqm	fAqim	IV	aggravate;worsen
+mly$yA	miliy$iyA	N	militia
