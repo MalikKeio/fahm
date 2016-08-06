@@ -88,14 +88,26 @@ function makeDict(filename, withStem) {
       var parts = line.split('\t');
       try {
           var word = toAbjad(parts[0]);
-          // Remove <pos>...</pos>
+          // Extracting pos data: <pos>...</pos>
           var posIndex = parts[3].indexOf('<pos>');
+		  var pos = [];
           if (posIndex > -1) {
             var newGloss = parts[3].substr(0, posIndex).trim();
+            var posInnerText = parts[3].substring(posIndex + 5, parts[3].indexOf('</pos>'));
+            var posTemp = posInnerText.split('+');
+            for (var i in posTemp) {
+              if (posTemp[i] !== "") {
+                var posInfo = posTemp[i].split('/')[1];
+                  if (!posInfo) {
+                    console.error(line);
+                  }
+                pos.push(posInfo);
+              }
+            }
             if (newGloss !== "") parts[3] = newGloss;
           }
 
-          var entry = [word, toAbjad(parts[1]), parts[2], parts[3]];
+          var entry = [word, toAbjad(parts[1]), parts[2], parts[3], pos];
           if (withStem) {
             entry.push(stems[word + ":" + parts[2]] || "");
           }

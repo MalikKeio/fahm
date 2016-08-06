@@ -16548,10 +16548,10 @@ byn	bayona	FW-Wa-a	between/among     <pos>bayona/PREP</pos>
 byn	bayoni	FW-Wa-i	between/among     <pos>bayoni/PREP</pos>
 byn	bayon	FW-Wa-o	between/among     <pos>bayon/PREP</pos>
 ;; mAbayona_1
-mAbyn	mAbayona	FW-Wa	between/among     <pos>mA/REL_PRON+bayona</pos>
-mAbyn	mAbayona	FW-Wa-a	between/among     <pos>mA/REL_PRON+bayona</pos>
-mAbyn	mAbayoni	FW-Wa-i	between/among     <pos>mA/REL_PRON+bayoni</pos>
-mAbyn	mAbayon	FW-Wa-o	between/among     <pos>mA/REL_PRON+bayon</pos>
+mAbyn	mAbayona	FW-Wa	between/among     <pos>mA/REL_PRON+bayona/PREP</pos>
+mAbyn	mAbayona	FW-Wa-a	between/among     <pos>mA/REL_PRON+bayona/PREP</pos>
+mAbyn	mAbayoni	FW-Wa-i	between/among     <pos>mA/REL_PRON+bayoni/PREP</pos>
+mAbyn	mAbayon	FW-Wa-o	between/among     <pos>mA/REL_PRON+bayon/PREP</pos>
 ;; bayonamA_1
 bynmA	bayonamA	FW-Wa	while      <pos>bayonamA/CONJ</pos>
 ;; bayoniy~_1
