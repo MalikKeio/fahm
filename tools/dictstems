@@ -136000,7 +136000,7 @@ dEs	daEos	N	the act of crushing something underfoot/running over
 >rdwgAn	>aroduwgAn	Nprop	Erdoğan (Turkish president)
 >wbAmA	>uwbAmA	Nprop	Obama (president of USA)
 trAmb	torAmob	Nprop	Trump (name)
-bwkymwn	buwkiymuwn	N	Pokémon
+bwkymwn	buwkiymuwn	N	pokémon
 mstxdm	musotaxodim	Nall	user (computing)
 Hwsb	Hawosab	Nap	computing
 yldrm	yilodirim	Nprop	Yıldırım (Turkish prime minister)
@@ -136009,17 +136009,17 @@ mnbj	manobij	Nprop	Manbij (city in Syria)
 fAynn$Al	fAyonano$Al	N	Financial (as in Financial Times)
 >ndrwyd	>anodoruwiyd	Nprop	Android
 Andrwyd	>anodoruwiyd	Nprop	Android
-<nfwgrAf	>inofuwgorAf	N	Infographics, Information graphics
-AnfwgrAf	>inofuwgorAf	N	Infographics, Information graphics
+<nfwgrAf	>inofuwgorAf	N	infographics, information graphics
+AnfwgrAf	>inofuwgorAf	N	infographics, information graphics
 zlAtAn	zlAtAn	Nprop	Zlatan (Swedish football player)
 >myrktAn	>amiyrkatAn	N	Americas
-<nswlyn	<insuwliyn	N	Insulin
-twlyf	tawoliyf	N	Video editing (from وَلَّفَ, "to blend, to mix")
+<nswlyn	<insuwliyn	N	insulin
+twlyf	tawoliyf	N	video editing (from وَلَّفَ, "to blend, to mix")
 ywAn	yuwAn	N	Yuan, Renminbi (Chinese currency)
-rnmynby	ranmiynbiy	N	Yuan, Renminbi (Chinese currency)
-jyAw	jiyAw	NduAt	Jiao (Chinese currency, 1/10 yuan)
-fn	fin	N	Fen (Chinese currency, 1/100 yuan)
-Hwvy	Huwviy~	Nall	Houthi (Zaidi Shia-led movement from Sa'dah, northern Yemen)
+rnmynby	ranmiynbiy	N	yuan, renminbi (Chinese currency)
+jyAw	jiyAw	NduAt	jiao (Chinese currency, 1/10 yuan)
+fn	fin	N	fen (Chinese currency, 1/100 yuan)
+Hwvy	Huwviy~	Nall	Houthi (Zaidi Shia-led movement from Sa'dah, northern Yemen) <pos>/ADJ</pos>
 zhrA'	zahorA'	N	Zahra' (given name, meaning beautiful, bright, shining and brilliant)
 Ezwly	Eazuwliy	N	Azouli (name of al-Azouli military jail in Egypt)
 AlfrA	Alfar~A	Nprop	Al-Farra (surname)
@@ -136027,8 +136027,8 @@ Alflwjp	Alfal~uwjap	Nprop	Fallujah (Iraki city)
 AlqyArp	Alqay~Arap	Nprop	Qayyarah (Iraki city)
 AlkAZmyp	AlkAZimiy~ap	Nprop	Al-Kāẓimiyyah (northern neighbourhood of Baghdad)
 m*Hj	ma*oHij	N	Madhhij (Arabic tribe)
-m*Hjy	ma*oHijiy~	Nall	Madhhiji (from Madhhij, an Arabic tribe)
-mgrd	mugar~id	Nall	The one that warbles, i.e. twitter user
+m*Hjy	ma*oHijiy~	Nall	Madhhiji (from Madhhij, an Arabic tribe) <pos>/ADJ</pos>
+mgrd	mugar~id	Nall	the one that warbles, i.e. twitter user
 gwgl	guwgl	Nprop	Google
 mmnhj	mumanohaj	Nall	systematized
 bsysw	bsiysuw	Nprop	Bsissou (surname)
@@ -136066,7 +136066,7 @@ yAhw	yAhuw	Nprop	Yahoo
 jwlAny	jawlAniy~	Nall	From Golan Heights, Julani
 AlxAldyp	AlxAlidiyap	Nprop	Al-Khalidiya (Iraqi city)
 AlzbdAny	AlzabadAniy	Nprop	Al-zabadani (Syrian city)
->mAzyg	>amAziyg	Nall	Amazigh (Berber) person
->mAzygy	>amAziygiy~	Nall	Amazigh (Berber)
-tAmAzygt	tAmAziygot	N	Tamazight, Berber language
+>mAzyg	>amAziyg	Nall	Amazigh (Berber) person <pos>/NOUN</pos>
+>mAzygy	>amAziygiy~	Nall	Amazigh (Berber) <pos>/ADJ</pos>
+tAmAzygt	tAmAziygot	N	Tamazight, Berber language <pos>/NOUN</pos>
 dAE$	dAEi$	Nprop	Daesh (ISIL/ISIS), abbr. of الدَولة الإسلامية في العِراق والشام‎
